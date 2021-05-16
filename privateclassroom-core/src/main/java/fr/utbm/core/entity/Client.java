@@ -20,25 +20,25 @@ public class Client implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @Column(name = "ID")
+    @Column(name = "id")
     private Long id;
     
-    @Column(name = "LASTNAME")
+    @Column(name = "lastname")
     private String lastname ;
     
-    @Column(name = "FIRSTNAME")
+    @Column(name = "firstname")
     private String firstname ;
     
-    @Column(name = "ADDRESS")
+    @Column(name = "address")
     private String address ;
     
-    @Column(name = "PHONE")
+    @Column(name = "phone")
     private String phone ;
 
-    @Column(name = "EMAIL")
+    @Column(name = "email")
     private String email ;
     
-    @Column(name = "COURSE_SESSION_ID")
+    @Column(name = "course_session_id")
     private Long courseSessionId ;
     
     public Client(Long id) {

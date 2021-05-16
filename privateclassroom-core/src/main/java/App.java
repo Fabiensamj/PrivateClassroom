@@ -1,5 +1,3 @@
-import org.hibernate.Hibernate;
-
 import fr.utbm.core.controller.ShowCourseController;
 import fr.utbm.core.util.HibernateUtil;
 
