@@ -19,18 +19,29 @@ public class CourseSession implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	
+	@Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Basic(optional = false)
+	
+	@Column(name = "id")
 	private Long id;
 	
+	@Column(name = "date")
 	private Date date;
 	
+	@Column(name = "start_h")
 	private Time start_h;
 	
+	@Column(name = "end_h")
 	private Time end_h;
 	
+	@Column(name = "max")
 	private int max;
 	
+	@Column(name = "course_code")
 	private String courseCode;
 	
+	@Column(name = "location_id")
 	private Long locationId;
 
 	
