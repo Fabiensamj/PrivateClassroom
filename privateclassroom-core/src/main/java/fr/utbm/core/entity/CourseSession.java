@@ -3,22 +3,45 @@ package fr.utbm.core.entity;
 import java.sql.Time;
 import java.util.Date;
 
-public class CourseSession {
+import java.io.Serializable;
+
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "course_session")
+public class CourseSession implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	
+	@Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Basic(optional = false)
+	
+	@Column(name = "id")
 	private Long id;
 	
+	@Column(name = "date")
 	private Date date;
 	
+	@Column(name = "start_h")
 	private Time start_h;
 	
+	@Column(name = "end_h")
 	private Time end_h;
 	
+	@Column(name = "max")
 	private int max;
 	
+	@Column(name = "course_code")
 	private String courseCode;
 	
+	@Column(name = "location_id")
 	private Long locationId;
 
 	
@@ -81,5 +104,9 @@ public class CourseSession {
 		this.locationId = locationId;
 	}
 	
+	@Override
+	public String toString() {
+		return "CourseSession [id=" + id + ", date=" + date + ", start_h=" + start_h + ", end_h=" + end_h + ", max=" + max + ", courseCode=" + courseCode + ", locationId=" + locationId + "]";
+	}
 	
 }

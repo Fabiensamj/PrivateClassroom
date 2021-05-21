@@ -7,29 +7,29 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
-import fr.utbm.core.entity.Location;
+import fr.utbm.core.entity.CourseSession;
 
-public class LocationDao {
-
+public class CourseSessionDao {
+	
 	EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("PrivateClassroom");
     EntityManager entityManager = null;  
 	
    
    /**
     * @param Id
-    * @return course by ("Id")
+    * @return course_session by ("Id")
     */
-   public Location getLocationById(Long id) {
+   public CourseSession getCourseSessionById(Long id) {
    	
    	this.entityManager = this.entityManagerFactory.createEntityManager();
-   	return this.entityManager.find(Location.class, id);
+   	return this.entityManager.find(CourseSession.class, id);
    }
    
-   public ArrayList<Location> getAllLocation(){
-   	ArrayList<Location> list = new ArrayList<Location>();
+   public ArrayList<CourseSession> getAllCourseSession(){
+   	ArrayList<CourseSession> list = new ArrayList<CourseSession>();
    	entityManager = entityManagerFactory.createEntityManager();
-   	Query q = entityManager.createQuery("from Location");
-   	list = (ArrayList<Location>) q.getResultList();
+   	Query q = entityManager.createQuery("from CourseSession");
+   	list = (ArrayList<CourseSession>) q.getResultList();
    	return list;
    	
    }

@@ -11,7 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "CLIENT")
+@Table(name = "client")
 public class Client implements Serializable {
 	
 	
@@ -44,6 +44,9 @@ public class Client implements Serializable {
     public Client(Long id) {
         super();
         this.id = id;
+    }
+    public Client() {
+    	
     }
     
     public Client(String lastname, String firstname, String address, String phone, String email, Long courseSessionId) {
@@ -122,5 +125,10 @@ public class Client implements Serializable {
     public void setCourseSessionId(Long courseSessionId) {
         this.courseSessionId = courseSessionId;
     }
+    
+    @Override
+	public String toString() {
+		return "Client [id=" + id + ", lastname=" + lastname + ", firstname=" + firstname + ",adress=" + address + ",phone=" + phone + ",email=" + email + ",course_session_id=" + courseSessionId + "]";
+	}
     
 }
