@@ -24,5 +24,10 @@ public class CourseService {
 		this.courseDao = new CourseDao();
 		return courseDao.getAllCourse();
 	}
+	
+	public ArrayList<Course> getCourseByName(String name){
+		this.courseDao = new CourseDao();
+		return courseDao.getCourseByName(name);
+	}	
 
 }
