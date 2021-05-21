@@ -7,30 +7,30 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
-import fr.utbm.core.entity.Location;
+import fr.utbm.core.entity.Client;
 
-public class LocationDao {
-
+public class ClientDao {
 	EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("PrivateClassroom");
     EntityManager entityManager = null;  
 	
    
    /**
     * @param Id
-    * @return course by ("Id")
+    * @return client by ("Id")
     */
-   public Location getLocationById(Long id) {
+   public Client getClientById(Long id) {
    	
    	this.entityManager = this.entityManagerFactory.createEntityManager();
-   	return this.entityManager.find(Location.class, id);
+   	return this.entityManager.find(Client.class, id);
    }
    
-   public ArrayList<Location> getAllLocation(){
-   	ArrayList<Location> list = new ArrayList<Location>();
+   public ArrayList<Client> getAllClient(){
+   	ArrayList<Client> list = new ArrayList<Client>();
    	entityManager = entityManagerFactory.createEntityManager();
-   	Query q = entityManager.createQuery("from Location");
-   	list = (ArrayList<Location>) q.getResultList();
+   	Query q = entityManager.createQuery("from Client");
+   	list = (ArrayList<Client>) q.getResultList();
    	return list;
    	
    }
+
 }

@@ -81,5 +81,9 @@ public class CourseSession {
 		this.locationId = locationId;
 	}
 	
+	@Override
+	public String toString() {
+		return "CourseSession [id=" + id + ", date=" + date + ", start_h=" + start_h + ", end_h=" + end_h + ", max=" + max + ", courseCode=" + courseCode + ", locationId=" + locationId + "]";
+	}
 	
 }

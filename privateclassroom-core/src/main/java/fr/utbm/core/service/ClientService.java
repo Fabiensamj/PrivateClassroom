@@ -11,18 +11,19 @@ import fr.utbm.core.repository.LocationDao;
 import fr.utbm.core.repository.CourseSessionDao;
 import fr.utbm.core.repository.ClientDao;
 
-public class CourseService {
+
+public class ClientService {
 	
-	private CourseDao courseDao;
+	private ClientDao clientDao;
 	
-	public Course searchCourseByCode(String code) {
-		this.courseDao = new CourseDao();
-		return courseDao.getCourseByCode(code);
+	public Client searchClientById(Long id) {
+		this.clientDao = new ClientDao();
+		return clientDao.getClientById(id);
 	}
 	
-	public ArrayList<Course> getAllCourse(){
-		this.courseDao = new CourseDao();
-		return courseDao.getAllCourse();
+	public ArrayList<Client> getAllClient(){
+		this.clientDao = new ClientDao();
+		return clientDao.getAllClient();
 	}
 
 }
