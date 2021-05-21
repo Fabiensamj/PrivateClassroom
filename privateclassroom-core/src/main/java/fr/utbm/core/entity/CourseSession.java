@@ -38,10 +38,10 @@ public class CourseSession implements Serializable {
 	@Column(name = "max")
 	private int max;
 	
-	@Column(name = "courseCode")
+	@Column(name = "course_code")
 	private String courseCode;
 	
-	@Column(name = "locationId")
+	@Column(name = "location_id")
 	private Long locationId;
 
 	
