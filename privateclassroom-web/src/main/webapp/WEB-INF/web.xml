@@ -8,13 +8,13 @@
   	<servlet-name>HomeServlet</servlet-name>
   	<display-name>HomeServlet</display-name>
   	<description></description>
-  	<servlet-class>fr.utbm.web.backoffice.HomeServlet</servlet-class>
+  	<servlet-class>fr.utbm.web.servlet.HomeServlet</servlet-class>
   </servlet>
   <servlet>
   	<servlet-name>ListServlet</servlet-name>
   	<display-name>ListServlet</display-name>
   	<description></description>
-  	<servlet-class>fr.utbm.web.backoffice.ListServlet</servlet-class>
+  	<servlet-class>fr.utbm.web.servlet.ListServlet</servlet-class>
   </servlet>
 	<servlet-mapping>
 	<servlet-name>HomeServlet</servlet-name>

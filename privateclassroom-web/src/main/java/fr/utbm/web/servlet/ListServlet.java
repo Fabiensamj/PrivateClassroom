@@ -1,4 +1,4 @@
-package fr.utbm.web.backoffice;
+package fr.utbm.web.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import fr.utbm.core.entity.Location;
-import fr.utbm.core.service.CourseService;
 import fr.utbm.core.service.LocationService;
 
 /**
