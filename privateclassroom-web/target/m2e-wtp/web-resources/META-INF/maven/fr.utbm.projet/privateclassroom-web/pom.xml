@@ -31,10 +31,11 @@
     </dependency>
     
     <dependency>
-	    <groupId>fr.utbm.projet</groupId>
-	    <artifactId>privateclassroom-core</artifactId>
-	    <version>0.0.1-SNAPSHOT</version>
-</dependency>
+    	<groupId>fr.utbm.projet</groupId>
+  		<artifactId>privateclassroom-core</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+    </dependency>
+    
   </dependencies>
 
   <build>
