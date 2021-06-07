@@ -40,6 +40,19 @@
 	    <artifactId>jstl</artifactId>
 	    <version>1.2</version>
 	</dependency>
+	
+	<dependency>
+	  	<groupId>com.hazelcast</groupId>
+  		<artifactId>hazelcast</artifactId>
+  		<version>3.7.1</version>
+  	</dependency>
+	<dependency>
+	  	<groupId>com.hazelcast</groupId>
+  		<artifactId>hazelcast-client</artifactId>
+  		<version>3.7.1</version>
+  	</dependency>
+	
+	
     
     <dependency>
             <groupId>javax</groupId>

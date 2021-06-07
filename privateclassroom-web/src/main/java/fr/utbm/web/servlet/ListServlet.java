@@ -8,6 +8,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.hazelcast.client.HazelcastClient;
+import com.hazelcast.client.config.ClientConfig;
+import com.hazelcast.core.HazelcastInstance;
+
+import fr.utbm.core.controller.ShowCourseController;
 import fr.utbm.core.entity.Course;
 import fr.utbm.core.service.CourseService;
 
@@ -21,14 +26,23 @@ public class ListServlet extends HttpServlet {
    
 	protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        this.cs = new CourseService();
-        List<Course> listCourse = this.cs.getAllCourse();
-        
-        String name = "test";
+		
+		ShowCourseController sc = new ShowCourseController();
+		sc.showAllCourse();
+		//partie Hazelcast
+		ClientConfig cc = new ClientConfig();
+        cc.getGroupConfig().setName("MyCluster").setPassword("MyCluster");
+        cc.getNetworkConfig().addAddress("localhost");
+	    HazelcastInstance hzClient = HazelcastClient.newHazelcastClient(cc);
+	    //read from list
+	    List<Course> listCourse = hzClient.getList("listcourse");
+	    
         request.setAttribute("list", listCourse);
-        request.setAttribute("name", name);
+        
         response.setContentType("text/html;charset=UTF-8");
         this.getServletContext().getRequestDispatcher( "/WEB-INF/jsp/list.jsp" ).forward( request, response );
+     // perform shutdown
+	      hzClient.getLifecycleService().shutdown();
     }
 
 	

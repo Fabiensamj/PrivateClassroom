@@ -2,12 +2,13 @@ package fr.utbm.core.controller;
 
 
 
-import java.util.ArrayList;
+import java.util.List;
 
-import fr.utbm.core.entity.Client;
-import fr.utbm.core.entity.CourseSession;
+import com.hazelcast.core.Hazelcast;
+import com.hazelcast.core.HazelcastInstance;
+import com.hazelcast.core.IList;
+
 import fr.utbm.core.entity.Course;
-import fr.utbm.core.entity.Location;
 import fr.utbm.core.service.CourseService;
 
 
@@ -24,10 +25,12 @@ public class ShowCourseController {
 	}
 	
 	public void showAllCourse() {
-		ArrayList<Course> n = new ArrayList<>();
-		n = cs.getAllCourse();
+		HazelcastInstance hz = Hazelcast.newHazelcastInstance();
+		
+		IList<Course> list = hz.getList("listcourse"); 
+		List<Course> n = cs.getAllCourse();
 		for(Course c : n) {
-			System.out.print(c.toString());
+			list.add(c);
 		}
 	}
 	
