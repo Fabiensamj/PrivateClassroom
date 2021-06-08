@@ -67,14 +67,23 @@
         <thead class="light">
           <tr>
             <th>Code</th>
-            <th>Titre</th>
+            <th>Date</th>
+            <th>Heure de début</th>
+            <th>Heure de fin</th>
+            <th>Nombre de places</th>
+            <th>Inscription</th>            
           </tr>
         </thead>
         <tbody>
         <c:forEach var="list" items="${list}">
         <tr class="info">
-           <td><c:out value="${list.code}"/></td>
-           <td><c:out value="${list.title}"/></td>            
+           <td><c:out value="${list.courseCode}"/></td>
+           <td><c:out value="${list.date}"/></td>
+           <td><c:out value="${list.start_h}"/></td>
+           <td><c:out value="${list.end_h}"/></td>  
+           <td><c:out value="${list.max}"/></td> 
+              
+           <td><button type="button" class="btn btn-default dropdown-toggle" value="submit">submit</button></td>         
         </tr>
         </c:forEach>
 		</tbody>

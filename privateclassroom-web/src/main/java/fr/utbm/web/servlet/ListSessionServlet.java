@@ -12,9 +12,9 @@ import fr.utbm.core.entity.CourseSession;
 import fr.utbm.core.service.CourseSessionService;
 
 /**
- * Servlet implementation class ListServlet
+ * Servlet implementation class ListSessionServlet
  */
-public class ListServlet extends HttpServlet {
+public class ListSessionServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
       
 	CourseSessionService css;
