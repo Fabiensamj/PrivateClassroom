@@ -1,6 +1,8 @@
 package fr.utbm.core.repository;
 
 import java.util.ArrayList;
+import java.sql.Time;
+import java.util.Date;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -28,9 +30,21 @@ public class CourseSessionDao {
    public ArrayList<CourseSession> getAllCourseSession(){
    	ArrayList<CourseSession> list = new ArrayList<CourseSession>();
    	entityManager = entityManagerFactory.createEntityManager();
-   	Query q = entityManager.createQuery("from CourseSession");
+   	Query q = entityManager.createQuery("from CourseSession order by courseCode");
    	list = (ArrayList<CourseSession>) q.getResultList();
    	return list;
    	
    }
+   
+   public ArrayList<CourseSession> getCourseSessionByDate(Date date){
+	   	ArrayList<CourseSession> list = new ArrayList<CourseSession>();
+	   	entityManager = entityManagerFactory.createEntityManager();
+	   	Query q = entityManager.createQuery("from CourseSession where date= ?1 ");
+	   	q.setParameter(1,date);
+	   	list = (ArrayList<CourseSession>) q.getResultList();
+	   	return list;
+	   	
+	}
+   
+   
 }

@@ -31,5 +31,13 @@ public class ShowCourseController {
 		}
 	}
 	
+	public void showCourseByName(String name) {
+		ArrayList<Course> n = new ArrayList<>();
+		n = cs.getCourseByName(name);
+		for(Course c : n) {
+			System.out.print(c.toString());
+		}
+	}
+	
 	
 }

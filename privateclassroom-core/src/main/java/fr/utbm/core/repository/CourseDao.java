@@ -32,4 +32,14 @@ public class CourseDao {
        	return list;
        	
        }
+    
+    public ArrayList<Course> getCourseByName(String name){
+       	ArrayList<Course> list = new ArrayList<Course>();
+       	entityManager = entityManagerFactory.createEntityManager();
+       	Query q = entityManager.createQuery("from Course where title like ?1 ");
+       	q.setParameter(1,"%"+name+"%");
+       	list = (ArrayList<Course>) q.getResultList();
+       	return list;
+       	
+       }
 }

@@ -1,6 +1,8 @@
 package fr.utbm.core.controller;
 
 import java.util.ArrayList;
+import java.sql.Time;
+import java.util.Date;
 
 import fr.utbm.core.entity.Client;
 import fr.utbm.core.entity.CourseSession;
@@ -21,6 +23,14 @@ public class ShowCourseSessionController {
 	public void showAllCourseSession() {
 		ArrayList<CourseSession> n = new ArrayList<>();
 		n = css.getAllCourseSession();
+		for(CourseSession s : n) {
+			System.out.print(s.toString());
+		}
+	}
+	
+	public void showCourseSessionByDate(Date date) {
+		ArrayList<CourseSession> n = new ArrayList<>();
+		n = css.getCourseSessionByDate(date);
 		for(CourseSession s : n) {
 			System.out.print(s.toString());
 		}
