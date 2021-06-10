@@ -47,7 +47,7 @@
             <th>Heure de début</th>
             <th>Heure de fin</th>
             <th>Nombre de places</th>
-            <!--<th>Remplissage</th>-->
+            <th>Remplissage</th>
            	<th>Lieu</th>
             <th>Inscription</th>            
           </tr>
@@ -60,6 +60,7 @@
            <td><c:out value="${list.start_h}"/></td>
            <td><c:out value="${list.end_h}"/></td>  
            <td><c:out value="${list.max}"/></td> 
+           <td><c:out value="${list.place}"/></td> 
           
            <c:choose>
            		<c:when test = "${list.locationId == 1 }">
@@ -98,6 +99,7 @@
 		      	<li class="list-group-item list-group-item-info">Heure de début : <c:out value="${list.start_h}"/></li>
 		      	<li class="list-group-item list-group-item-info">Heure de fin : <c:out value="${list.end_h}"/></li>
 		      	<li class="list-group-item list-group-item-info">Nombre de places : <c:out value="${list.max}"/></li>
+		      	<li class="list-group-item list-group-item-info">Remplissage : <c:out value=""/></li>
 		      	<c:choose>
            		<c:when test = "${list.locationId == 1 }">
            			<li class="list-group-item list-group-item-info">Lieux: Belfort</li>	
