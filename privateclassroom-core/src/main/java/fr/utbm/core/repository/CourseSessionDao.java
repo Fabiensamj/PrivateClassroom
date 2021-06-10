@@ -35,6 +35,14 @@ public class CourseSessionDao {
    	return list;
    	
    }
+   public ArrayList<CourseSession> getCourseSessionByCode( String code){
+	   	ArrayList<CourseSession> list = new ArrayList<CourseSession>();
+	   	entityManager = entityManagerFactory.createEntityManager();
+	   	Query q = entityManager.createQuery("from CourseSession where courseCode= ?1 ");
+	   	q.setParameter(1,code);
+	   	list = (ArrayList<CourseSession>) q.getResultList();
+	   	return list;
+   }
    
    public ArrayList<CourseSession> getCourseSessionByDate(Date date){
 	   	ArrayList<CourseSession> list = new ArrayList<CourseSession>();

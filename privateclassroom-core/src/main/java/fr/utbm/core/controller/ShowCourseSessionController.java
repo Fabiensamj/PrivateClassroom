@@ -27,6 +27,13 @@ public class ShowCourseSessionController {
 			System.out.print(s.toString());
 		}
 	}
+	public void showCourseSessionByCode(String code) {
+		ArrayList<CourseSession> n = new ArrayList<>();
+		n = css.getCourseSessionByCode(code);
+		for(CourseSession s : n) {
+			System.out.print(s.toString());
+		}
+	}
 	
 	public void showCourseSessionByDate(Date date) {
 		ArrayList<CourseSession> n = new ArrayList<>();

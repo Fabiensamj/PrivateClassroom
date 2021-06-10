@@ -34,8 +34,8 @@ public class App {
 	      } catch (ParseException e) {
 	        e.printStackTrace();
 	      }
-	    
-		sc.showCourseSessionByDate(date);
+	    sc.showCourseSessionByCode("AD50");
+		//sc.showCourseSessionByDate(date);
 		HibernateUtil.shutdown();
 		/*ShowLocationController sc = new ShowLocationController();
 		sc.showAllLocation();

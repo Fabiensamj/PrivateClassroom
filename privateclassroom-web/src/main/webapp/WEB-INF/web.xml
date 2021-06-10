@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
+<element>
 <web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
@@ -19,6 +19,15 @@
   	<servlet-name>ListServlet</servlet-name>
   	<servlet-class>fr.utbm.web.servlet.ListServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<display-name>LoginServlet</display-name>
+  	<servlet-class>fr.utbm.web.servlet.LoginServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<display-name>ListFilter</display-name>
+  	<servlet-class>fr.utbm.web.servlet.ListFilter</servlet-class>
+  </servlet>
+  
 	<servlet-mapping>
 	<servlet-name>HomeServlet</servlet-name>
   	<url-pattern>/homeServlet</url-pattern>
@@ -27,8 +36,16 @@
   	<servlet-name>ListServlet</servlet-name>
   	<url-pattern>/listServlet</url-pattern>
   </servlet-mapping>
+  	<servlet-mapping>
+  		<servlet-name>LoginServlet</servlet-name>
+  		<url-pattern>/loginServlet</url-pattern>
+  	</servlet-mapping>
+  	<servlet-mapping>
+  		<servlet-name>ListFilter</servlet-name>
+  		<url-pattern>/listFilter</url-pattern>
+  	</servlet-mapping>
 </web-app>  
-  
+</element>  
   	
   	
   

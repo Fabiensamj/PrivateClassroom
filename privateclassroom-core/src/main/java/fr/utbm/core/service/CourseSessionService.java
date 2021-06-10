@@ -31,5 +31,10 @@ public class CourseSessionService {
 		this.csDao = new CourseSessionDao();
 		return csDao.getCourseSessionByDate(date);
 	}
+	
+	public ArrayList<CourseSession> getCourseSessionByCode(String code){
+		this.csDao = new CourseSessionDao();
+		return csDao.getCourseSessionByCode(code);
+	}
 
 }

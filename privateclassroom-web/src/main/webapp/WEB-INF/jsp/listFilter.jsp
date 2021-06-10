@@ -37,33 +37,6 @@
 		</div>
 </div>
 
-
-<form action="listFilter" method="get">
-  <div class="input-group col-xs-offset-3 col-xs-6" style="width:50%">
-    <input type="text" class="form-control" placeholder="Mot clef" name="keyword"> 
- 	<div class="form-group-inline">
-		
-		<input type="date" class="form-control" placeholder="YYYY-MM-dd">
-
-	</div>
-	 	<div class="form-group-inline">
-	 	
-	
-		<select class="form-control" id="exampleFormControlSelect1" name="location">
-	      <option>Belfort</option>
-	      <option>Sevenans</option>
-	      <option>Montbéliard</option>
-    	</select>
-		
-	</div>
-    <div class="form-group-inline">
-      <button class="btn btn-default" type="submit">
-        <i class="glyphicon glyphicon-search"></i>
-      </button>
-    </div>
-  </div>
-</form>
-
 <div class="container">
       <h1></h1>
       <table class="table table-hover">
@@ -125,7 +98,6 @@
 		      	<li class="list-group-item list-group-item-info">Heure de début : <c:out value="${list.start_h}"/></li>
 		      	<li class="list-group-item list-group-item-info">Heure de fin : <c:out value="${list.end_h}"/></li>
 		      	<li class="list-group-item list-group-item-info">Nombre de places : <c:out value="${list.max}"/></li>
-
 		      	<c:choose>
            		<c:when test = "${list.locationId == 1 }">
            			<li class="list-group-item list-group-item-info">Lieux: Belfort</li>	
@@ -142,7 +114,6 @@
            		
            
            </c:choose>
-
 		      </ul>
 		      <form>
 		      	<div class="form-group">
@@ -173,12 +144,7 @@
 		      </div>
 		    </div>
 		  </div>
-
-		</div>
-         
-
 		</div>         
-
         </tr>
         </c:forEach>
 		</tbody>
@@ -186,6 +152,6 @@
 </div>
 
 
-</ul>-->
+</ul>
 </body>
 </html>

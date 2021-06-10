@@ -17,7 +17,7 @@
       <a style="color: #ffffff" class="navbar-brand" href="#">Private Classroom</a>
     </div>
     <ul class="nav navbar-nav">
-      <li><a style="color: #ffffff" href="/privateclassroom-web/homeServlet">Home</a></li>
+      <li><a style="color: #ffffff" href="/privateclassroom-web/index.jsp">Home</a></li>
       <li><a style="color: #ffffff" href="/privateclassroom-web/listServlet">Liste</a></li>
     </ul>
   <ul class="nav navbar-nav navbar-right">
