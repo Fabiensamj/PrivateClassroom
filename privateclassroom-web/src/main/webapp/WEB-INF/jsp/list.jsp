@@ -36,9 +36,10 @@
 			<h1 class="text-center" style= "margin-bottom:30px">Liste de nos cours disponibles</h1>
 		</div>
 </div>
-<form>
+<form action="filtres">
   <div class="input-group col-xs-offset-3 col-xs-6" style="width:50%">
-    <input type="text" class="form-control" placeholder="Mot clef"> 
+    <input type="text" class="form-control" name="mot" placeholder="Mot clef"> 
+    <input type="date" class="form-control" name="date" placeholder="MM/DD/YYY">
  	<div class="input-group-btn">
 		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">DATE <span class="caret"></span></button>
 		<ul class="dropdown-menu dropdown-menu-right">
@@ -83,7 +84,56 @@
            <td><c:out value="${list.end_h}"/></td>  
            <td><c:out value="${list.max}"/></td> 
               
-           <td><button type="button" class="btn btn-default dropdown-toggle" value="submit">submit</button></td>         
+           <td><button type="button" class="btn btn-default dropdown-toggle" data-toggle="modal" data-target="#ModalInscription">submit</button></td>
+           
+           <div class="modal fade" id="ModalInscription" tabindex="-1" role="dialog">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h5 class="modal-title">Inscription</h5>
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          <span aria-hidden="true">&times;</span>
+		        </button>
+		      </div>
+		      <div class="modal-body">
+		      <ul class="list-group">
+		      	<li class="list-group-item list-group-item-info">Code : <c:out value="${list.courseCode}"/></li>
+		      	<li class="list-group-item list-group-item-info">Date : <c:out value="${list.date}"/></li>
+		      	<li class="list-group-item list-group-item-info">Heure de début : <c:out value="${list.start_h}"/></li>
+		      	<li class="list-group-item list-group-item-info">Heure de fin : <c:out value="${list.end_h}"/></li>
+		      	<li class="list-group-item list-group-item-info">Nombre de places : <c:out value="${list.max}"/></li>
+		      </ul>
+		      <form>
+		      	<div class="form-group">
+			    	<label for="InputNom">Nom</label>
+			    	<input type="text" class="form-control" id="InputNom" placeholder="Nom">
+			  	</div>
+			  	<div class="form-group">
+			    	<label for="InputPrenom">Prénom</label>
+			    	<input type="text" class="form-control" id="InputPrenom" placeholder="Prénom">
+			  	</div>
+			  	<div class="form-group">
+			    	<label for="InputAdresse">Adresse</label>
+			    	<input type="text" class="form-control" id="InputAdresse" placeholder="Adresse">
+			  	</div>
+			  	<div class="form-group">
+			    	<label for="InputTelephone">Téléphone</label>
+			    	<input type="text" class="form-control" id="InputTelephone" placeholder="Téléphone">
+			  	</div>
+			  	<div class="form-group">
+			    	<label for="InputMail">E-mail</label>
+			    	<input type="text" class="form-control" id="InputMail" placeholder="E-mail">
+			  	</div>
+		        </form>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-primary">S'inscrire</button>
+		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+         
         </tr>
         </c:forEach>
 		</tbody>

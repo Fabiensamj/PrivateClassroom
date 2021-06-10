@@ -1,6 +1,9 @@
 package fr.utbm.web.servlet;
 
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -24,6 +27,8 @@ public class ListServlet extends HttpServlet {
         this.css = new CourseSessionService();
         List<CourseSession> listCourseSession = this.css.getAllCourseSession();
         
+       
+        
         String name = "test";
         request.setAttribute("list", listCourseSession);
         request.setAttribute("name", name);
@@ -39,7 +44,18 @@ public class ListServlet extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		/*HttpSession session = request.getSession();
+		
+		Date date = null;
+	    SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+	    String date1= (String) session.getAttribute("date");
+
+	    try {
+	        date = simpleDateFormat.parse(date1);
+	      } catch (ParseException e) {
+	        e.printStackTrace();
+	      }
+		List<CourseSession> listCourseSession = this.css.getCourseSessionByDate(date);*/
 	}
 
 }
